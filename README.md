@@ -7,6 +7,6 @@ const salt = await bcrypt.genSaltSync(10);
 this.password = await bcrypt.hashSync(this.password, salt);
 });
 
-### handle token
+### Handle token
 
 Using this package: https://www.npmjs.com/package/jsonwebtoken
