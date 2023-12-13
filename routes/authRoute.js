@@ -6,6 +6,8 @@ const {
   getUserInfo,
   deleteUser,
   updateUser,
+  blockUser,
+  unBlockUser,
 } = require("../controller/userController");
 const {
   authMiddleware,
@@ -25,5 +27,9 @@ router.get("/user-info/:id", authMiddleware, isAdminMiddleware, getUserInfo);
 router.delete("/user-info/:id", deleteUser);
 
 router.put("/user-info/:id", authMiddleware, updateUser);
+
+router.put("/block-user/:id", authMiddleware, isAdminMiddleware, blockUser);
+
+router.put("/unblock-user/:id", authMiddleware, isAdminMiddleware, unBlockUser);
 
 module.exports = router;
